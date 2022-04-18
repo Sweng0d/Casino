@@ -1,4 +1,4 @@
-                                                            # Galaxy Casino - Play and Have Fun!
+#                                                              Galaxy Casino - Play and Have Fun!
 ![image](https://user-images.githubusercontent.com/101097089/163240320-0f3d47f9-d799-4c47-ab25-7aede6f9568d.png)
 
 Welcome to Galaxy Casino!
