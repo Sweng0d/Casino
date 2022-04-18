@@ -4,9 +4,10 @@
 The objective of this project is to create a casino on the Ethereum blockchain, where people can deposit their money, buy chips, and play the available games. Good luck!
 
 # Managing user balance, constructors and modifiers
+##Here are the state variables needed to use the contract.
+##And some relevant events, the constructor and the modifier.
 
-Here are the state variables needed to use the contract.
-And some relevant events, the constructor and the modifier.
+
 
 Basically we have a constructor that defines the address of the owner, which is the house of the Casino.
 The house must always be analyzing how much money is in the casino, to ensure that the casino has no chance of going broke.
