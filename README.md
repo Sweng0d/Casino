@@ -81,10 +81,12 @@ contract Contract {
 
 # Random Number Generator
 
-Here we will use the keccak256 function with some variables. However, it is worth mentioning that this function is easily manipulated, it is recommended to use the VRF from Chainlink V2. We will use keccak only for demonstration and ease of testing.
+Here we will use the keccak256 function with some variables. However, it is worth mentioning that this function is easily manipulated, it is recommended to use the VRF from Chainlink V2. We will use keccak only for demonstration and ease of testing. Especially since we are going to use fuzzing test, which involves thousands of random numbers, which makes the keccak function more effective for testing, later switching to Chainlink's VRF.
 
 ```
 function randomNumber(uint maxNumber) public view returns(uint random) {
-        random = uint(keccak256(abi.encodePacked(block.timestamp, block.difficulty, numbersGenerated.length, msg.sender))) % (maxNumber + 1);
+        random = uint(keccak256(abi.encodePacked
+        (block.timestamp, block.difficulty, numbersGenerated.length, msg.sender))) % (maxNumber + 1);
     }
+```
 
