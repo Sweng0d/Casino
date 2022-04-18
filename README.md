@@ -8,6 +8,13 @@ The objective of this project is to create a casino on the Ethereum blockchain, 
 Here are the state variables needed to use the contract.
 And some relevant events, the constructor and the modifier.
 
+Basically we have a constructor that defines the address of the owner, which is the house of the Casino.
+The house must always be analyzing how much money is in the casino, to ensure that the casino has no chance of going broke.
+Remembering that the bankroll probability difference is not very big, being in most games around 5%.
+Therefore, a few days of deficit are plausible.
+
+After that, we have modifiers that help the games work and functions, which help to give information and are also present in the tests carried out at Foundry.
+
 ```
 contract Contract {
 
