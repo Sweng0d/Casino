@@ -6,7 +6,69 @@ The objective of this project is to create a casino on the Ethereum blockchain, 
 # Managing user balance, constructors and modifiers
 
 Here are the state variables needed to use the contract.
-Some relevant events, the constructor and the modifier.
+And some relevant events, the constructor and the modifier.
+
+```
+contract Contract {
+
+    address payable owner;
+    uint public houseBalance;
+    uint[] private numbersGenerated;
+    mapping(address => uint) public balanceOf;
+
+    event bigVictory(address who, uint howMuch);
+
+    constructor() payable {
+        owner = payable(msg.sender);
+        houseBalance += msg.value;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    modifier playerHasTheMoney(uint _bet) {
+        require(balanceOf[msg.sender] >= _bet);
+        _;
+    }
+
+    function getTheOwner() public view returns(address){
+        return owner;
+    }
+
+    function houseDeposit() public payable onlyOwner {
+        houseBalance += msg.value;
+    }
+
+    function houseWithdrawn(uint _amount) public payable onlyOwner {
+        require(houseBalance >= _amount, "The house does not have this amount.");
+        houseBalance -= _amount;
+        (bool success, ) = msg.sender.call{value:_amount}("");
+        require(success, "call failed"); //is it necessary? (this line)
+    }
+
+    function checkHouseBalance() public view returns(uint){
+        uint _houseBalance = houseBalance; 
+        return _houseBalance;
+    }
+
+    function playerDeposit() public payable {
+        balanceOf[msg.sender] += msg.value;
+    }
+
+    function playerWithdrawn(uint _amount) public payable {
+        require(_amount <= balanceOf[msg.sender]);
+        balanceOf[msg.sender] -= _amount;
+        (bool success, ) = msg.sender.call{value:_amount}("");
+        require(success, "withdrawn failed!");
+    }
+
+    function checkPlayerDeposit(address _address) public view returns(uint) {
+        return balanceOf[_address];
+    }
+    
+```
 
 # Managing user balance, constructors and modifiers
 
