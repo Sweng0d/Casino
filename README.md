@@ -90,3 +90,14 @@ function randomNumber(uint maxNumber) public view returns(uint random) {
     }
 ```
 
+# Game Structure
+
+Each game will have its own uniqueness.
+Porém, antes de todo jogo, haverá algumas anotações, tais como:
+-Probability of the player winning
+-Probability reduced (we are the house, we need to make money)
+-How much the player receives if he wins
+
+# Game 01: Jackpot
+
+Here is the famoust game of the casino. The Famous Jackpot
