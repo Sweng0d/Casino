@@ -106,6 +106,9 @@ Here is the most famous game in the casino. The famous jackpot
 The idea of this game is: you will rotate 3 numbers from 0 to 999, if the 3 numbers are the same, you receive a big prize proportional to your bet
 
 ```
+    //probability of win: 1/1000ˆ2 = 0.000001
+    //probability reduced (the house needs to make money)= 5% of reduction, so, the prob is now = 0.00000095
+    //if the user wins, he receives: 1052631x his money
 function jackpot(uint bet) public playerHasTheMoney(bet) returns (string memory result){
         require(bet > 0, "You cannot bet 0");
         require(houseBalance >= bet * 1052631, "The house does not have this money if you win."); //insolvency test
