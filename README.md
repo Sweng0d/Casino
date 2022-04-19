@@ -103,3 +103,29 @@ Porém, antes de todo jogo, haverá algumas anotações, tais como:
 Here is the most famous game in the casino. The famous jackpot
 ![image](https://user-images.githubusercontent.com/101097089/163922932-d8bbc22c-e24b-4c52-87dc-8f61221f8f86.png)
 
+The idea of this game is: you will rotate 3 numbers from 0 to 999, if the 3 numbers are the same, you receive a big prize proportional to your bet
+
+```
+function jackpot(uint bet) public playerHasTheMoney(bet) returns (string memory result){
+        require(bet > 0, "You cannot bet 0");
+        require(houseBalance >= bet * 1052631, "The house does not have this money if you win."); //insolvency test
+        balanceOf[msg.sender] -= bet;
+        uint firstNumber = randomNumber(999);
+        numbersGenerated.push(firstNumber);
+        uint secondNumber = randomNumber(999);
+        numbersGenerated.push(secondNumber);
+        uint thirdNumber = randomNumber(999);
+        numbersGenerated.push(thirdNumber);
+        if(firstNumber != secondNumber || secondNumber != thirdNumber){
+            houseBalance += bet;
+            result = "You lost!";
+        } else {
+            houseBalance -= (bet * 1052631);
+            balanceOf[msg.sender] += (bet * 1052631);
+            result = "YOU WON!";
+            emit bigVictory(msg.sender, bet * 1052631);
+        }
+
+    }
+```
+
