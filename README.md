@@ -100,4 +100,6 @@ Porém, antes de todo jogo, haverá algumas anotações, tais como:
 
 # Game 01: Jackpot
 
-Here is the famoust game of the casino. The Famous Jackpot
+Here is the most famous game in the casino. The famous jackpot
+![image](https://user-images.githubusercontent.com/101097089/163922932-d8bbc22c-e24b-4c52-87dc-8f61221f8f86.png)
+
