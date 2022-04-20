@@ -132,3 +132,39 @@ function jackpot(uint bet) public playerHasTheMoney(bet) returns (string memory 
     }
 ```
 
+# Game 02: Heads or Tails
+
+This game is a classic coin flip where you can double your money really fast, or lose it.
+
+```
+//probability of win: 50%
+    //probability reduced: 47%
+    //premium: 
+    function coinFlip(uint bet, bool head) public playerHasTheMoney(bet) returns (string memory result) {
+        require(bet > 0, "You cannot bet 0");
+        require(houseBalance>= bet * 2);
+        balanceOf[msg.sender] -= bet;
+        uint theAnswer = randomNumber(100);
+        bool headAnswer;
+        if (theAnswer < 47 && head == true) {
+            headAnswer = true;
+        } else if (theAnswer > 51 && head == false) {
+            headAnswer = false;
+        } else {
+            headAnswer = !head;
+        }
+        if (head == headAnswer) {
+            result = "You won!";
+            balanceOf[msg.sender] += (bet * 2);
+        } else {
+            result = "You lost!";
+            houseBalance += bet;
+        }
+
+
+    }
+```
+
+# Tests and Security
+
+
