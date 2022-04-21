@@ -101,6 +101,7 @@ Porém, antes de todo jogo, haverá algumas anotações, tais como:
 # Game 01: Jackpot
 
 Here is the most famous game in the casino. The famous jackpot
+
 ![image](https://user-images.githubusercontent.com/101097089/163922932-d8bbc22c-e24b-4c52-87dc-8f61221f8f86.png)
 
 The idea of this game is: you will rotate 3 numbers from 0 to 999, if the 3 numbers are the same, you receive a big prize proportional to your bet
