@@ -167,4 +167,8 @@ This game is a classic coin flip where you can double your money really fast, or
 
 # Tests and Security
 
+The tests were done in Foundry, and therefore written in Solidity.
+Basically most of the tests we are fuzzing, trying to see if any number can cause a failure in the functioning of the Casino, and also testing the logic of our contract
+You can check the test in Contract.t.sol
+
 
