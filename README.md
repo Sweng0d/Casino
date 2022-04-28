@@ -176,3 +176,4 @@ You can check the test in Contract.t.sol
 teste
 develop new games
 allow anyone to create any game
+at least 8 games
