@@ -177,3 +177,4 @@ teste
 develop new games
 allow anyone to create any game
 at least 8 games
+more and more over time
